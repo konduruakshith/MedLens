@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedLens - Clinical Information Intelligence</title>
+    
+    <!-- Tailwind CSS (CDN for zero-dependency setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-gray-200 shadow-sm z-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="navigateTo('landing')">
+                        <div class="bg-medical-50 text-medical-600 p-2 rounded-lg mr-3 group-hover:bg-medical-100 transition-colors">
+                            <i class="fa-solid fa-notes-medical text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-2xl text-medical-900 tracking-tight">MedLens</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <button onclick="navigateTo('dashboard')" class="text-gray-600 hover:text-medical-600 hover:bg-medical-50 px-3 py-2 rounded-md text-sm font-medium transition-all">
+                        <i class="fa-solid fa-chart-pie mr-1.5"></i> Dashboard
+                    </button>
+                    <button onclick="navigateTo('intake')" class="bg-medical-600 hover:bg-medical-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all shadow-sm hover:shadow flex items-center">
+                        <i class="fa-solid fa-plus mr-1.5"></i> New Patient
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="app-root" class="flex-grow flex flex-col relative w-full">
+        <!-- JS will inject views here -->
+    </main>
+
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
